@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penny Juice of America</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+      }
+
+      :focus {
+        outline: 2px solid #4caf50;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body class="bg-green-50 text-gray-900">
+    <header class="bg-green-400 shadow-md sticky top-0">
+      <div class="container mx-auto flex justify-between items-center p-8">
+        <h1 class="text-white text-3xl font-bold">Penny Juice of America</h1>
+        <nav>
+          <ul class="flex space-x-6 font-semibold hidden md:flex">
+            <li><a href="#" class="hover:text-white">Inicio</a></li>
+            <li><a href="#" class="hover:text-white">Productos</a></li>
+            <li><a href="#" class="hover:text-white">Nosotros</a></li>
+            <li><a href="#" class="hover:text-white">Contacto</a></li>
+          </ul>
+          <button
+            class="md:hidden text-white focus:outline-none"
+            id="menu-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+      <div class="md:hidden hidden" id="mobile-menu">
+        <ul
+          class="flex flex-col items-center py-4 bg-green-400 text-white space-y-4"
+        >
+          <li><a href="#" class="hover:text-white">Inicio</a></li>
+          <li><a href="#" class="hover:text-white">Productos</a></li>
+          <li><a href="#" class="hover:text-white">Nosotros</a></li>
+          <li><a href="#" class="hover:text-white">Contacto</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="py-40">
+      <div
+        class="container mx-auto flex flex-wrap items-center justify-between px-8"
+      >
+        <div class="w-full md:w-1/2 p-6">
+          <h1 class="text-5xl font-bold text-gray-900">
+            Bienvenido a Penny Juice of America
+          </h1>
+          <p class="text-lg mt-4 text-gray-700">
+            100% jugo de fruta concentrado diseñado específicamente para centros
+            infantiles. Nuestro jugo es natural, delicioso y perfecto para
+            cualquier momento del día. Está libre de conservantes y aditivos
+            artificiales, lo que garantiza un producto de calidad que podrás
+            ofrecer a tus niños con confianza.
+          </p>
+          <button
+            class="mt-4 inline-block bg-green-400 text-white font-semibold py-2 px-4 rounded hover:bg-green-500"
+          >
+            Comprar ahora
+          </button>
+        </div>
+        <div class="w-full md:w-1/2 p-6">
+          <img
+            src="/img/foto-header.webp"
+            alt="Imagen de bienvenida"
+            class="rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-40 bg-green-100">
+      <div
+        class="container mx-auto flex flex-wrap items-center justify-between px-8"
+      >
+        <div class="w-full md:w-1/2 p-6 order-1 md:order-1">
+          <img
+            src="/img/drinking.png"
+            alt="Cliente bebiendo jugo natural de frutas"
+            class="rounded-lg shadow-md"
+          />
+        </div>
+
+        <div class="w-full md:w-1/2 p-6 order-2 md:order-2">
+          <h1 class="text-5xl font-bold text-gray-900">
+            Disfruta nuestros deliciosos jugos
+          </h1>
+          <p class="text-lg mt-4 text-gray-700">
+            Sabores frescos y naturales, perfectos para todos los gustos. Ya sea
+            que busques un jugo revitalizante para empezar el día o una bebida
+            refrescante para las tardes de verano, Penny Juice tiene el sabor
+            ideal. Además, nuestros jugos son hechos con frutas de la más alta
+            calidad, lo que garantiza una experiencia llena de sabor en cada
+            sorbo.
+          </p>
+          <button
+            class="mt-4 inline-block bg-green-400 text-white font-semibold py-2 px-4 rounded hover:bg-green-500"
+          >
+            Ver más sabores
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main class="container mx-auto py-16 space-y-16">
+      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <img
+            src="/img/juice1.png"
+            alt="Sabor 1: Jugo de manzana natural, sin colorantes"
+            class="rounded-lg shadow-md mb-4"
+          />
+          <h2 class="text-3xl font-bold text-green-700">Sabores 1</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Jugo de manzana natural, jugo sin colorantes.
+          </p>
+          <button
+            class="mt-4 inline-block bg-green-400 text-white font-semibold py-2 px-4 rounded hover:bg-green-500"
+          >
+            Comprar
+          </button>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <img
+            src="/img/juice2.png"
+            alt="Sabor 2: Jugo de naranja, ideal para todas las edades"
+            class="rounded-lg shadow-md mb-4"
+          />
+          <h2 class="text-3xl font-bold text-green-700">Sabores 2</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Jugo de naranja, ideal para todas las edades.
+          </p>
+          <button
+            class="mt-4 inline-block bg-green-400 text-white font-semibold py-2 px-4 rounded hover:bg-green-500"
+          >
+            Comprar
+          </button>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <img
+            src="/img/juice1.png"
+            alt="Sabor 3: Jugo tropical con piña y mango"
+            class="rounded-lg shadow-md mb-4"
+          />
+          <h2 class="text-3xl font-bold text-green-700">Sabores 3</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Jugo tropical con toques de piña y mango.
+          </p>
+          <button
+            class="mt-4 inline-block bg-green-400 text-white font-semibold py-2 px-4 rounded hover:bg-green-500"
+          >
+            Comprar
+          </button>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <img
+            src="/img/juice2.png"
+            alt="Sabor 4: Jugo de uva, refrescante"
+            class="rounded-lg shadow-md mb-4"
+          />
+          <h2 class="text-3xl font-bold text-green-700">Sabores 4</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Jugo de uva, para un sabor refrescante.
+          </p>
+          <button
+            class="mt-4 inline-block bg-green-400 text-white font-semibold py-2 px-4 rounded hover:bg-green-500"
+          >
+            Comprar
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-green-400 text-white text-center py-6">
+      <p>
+        <a href="#" class="hover:text-white">Privacy Policy</a> |
+        <a href="#" class="hover:text-white">Manage Consent Preferences</a> |
+        <a href="#" class="hover:text-white">Do Not Share My Information</a> |
+        <a href="#" class="hover:text-white">Conditions of Use</a> |
+        <a href="#" class="hover:text-white">Notice and Take Down Policy</a> |
+        <a href="#" class="hover:text-white">Website Accessibility Policy</a>
+      </p>
+      <p>
+        &copy; 2025 The content on this website is owned by us and our
+        licensors. Do not copy any content (including images) without our
+        consent.
+      </p>
+    </footer>
+  </body>
+</html>
+
+<script>
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
+  });
+</script>
