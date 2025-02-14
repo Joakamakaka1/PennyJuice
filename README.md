@@ -214,3 +214,279 @@ Para aplicar las pautas de accesibilidad y alcanzar el nivel AA, puedes implemen
 
 ### 5. Falta de Enfoque Visible en Elementos Interactivos
 - **Solución:** Implementar un enfoque visual claro (por ejemplo, un borde resaltado o cambio de color) para los botones y enlaces cuando se navega por teclado. Esto permitirá a los usuarios saber qué elemento está activo y facilita la navegación.
+
+# Implementación para Alcanzar el Nivel Deseado de Accesibilidad
+
+Este documento detalla los cambios realizados en el sitio web para mejorar su accesibilidad, corrigiendo errores específicos y asegurando que cumpla con los estándares de accesibilidad.
+
+## 1. Documentación de los Cambios y Análisis de los Errores
+
+### 1.1. Contraste Insuficiente entre Texto y Fondo
+
+- **Descripción del Error**: El contraste entre el texto y el fondo en algunas partes del sitio no cumplía con los estándares de accesibilidad, lo que podía dificultar la lectura de personas con baja visión o daltonismo.
+  
+- **Solución Aplicada**: Se ha utilizado una paleta de colores con suficiente contraste, garantizando que los textos sobre el fondo verde tengan una legibilidad adecuada. Además, en la propiedad `:focus`, se aplica un borde de color verde para hacer más visible la interacción de los elementos al ser seleccionados mediante el teclado, mejorando la visibilidad en caso de que no se pueda distinguir correctamente el color.
+
+- **Antes:**
+  
+![image](https://github.com/user-attachments/assets/d1b4f419-72b8-4089-8645-6b11fa0632fb)
+
+
+
+- **Despues:**
+  
+![image](https://github.com/user-attachments/assets/eef8bfc5-2d54-49a1-addc-21ed88a48314)
+
+
+### 1.2. Imágenes sin Texto Alternativo
+
+- **Descripción del Error**: Algunas imágenes no tenían un atributo `alt`, lo que impedía que los usuarios con discapacidades visuales comprendieran el contenido visual de la página.
+  
+- **Solución Aplicada**: Se han añadido descripciones en el atributo `alt` de todas las imágenes relevantes, permitiendo que los usuarios de lectores de pantalla puedan comprender el contenido de las imágenes.
+
+#### Ejemplo de Código:
+```html
+<img src="/img/foto-header.webp" alt="Imagen de bienvenida" class="rounded-lg shadow-md" width="600" height="400" loading="lazy" />
+```
+
+Esto asegura que los usuarios con discapacidades visuales tengan una experiencia accesible y puedan entender el propósito de las imágenes.
+
+### 1.3. Navegación por Teclado Limitada
+- **Descripción del Error**: Algunas secciones no eran accesibles utilizando solo el teclado, lo que impedía a los usuarios con discapacidades motoras navegar por la página.
+
+- **Solución Aplicada**: Se garantizó que todos los elementos interactivos del sitio, como enlaces y botones, sean accesibles mediante el teclado. Se agregó la capacidad de navegación con la tecla Tab para los elementos interactivos.
+
+```javascript
+<script>
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
+  });
+</script>
+```
+
+Esto asegura que los usuarios con discapacidades motoras puedan navegar por el sitio sin necesidad de utilizar un ratón.
+
+### 1.4. Falta de Enfoque Visible en Elementos Interactivos
+- **Descripción del Error**: No se mostraba un enfoque visible claro en los elementos interactivos (botones, enlaces) cuando se navegaba por teclado.
+
+- **Solución Aplicada**: Se implementó un enfoque visual en todos los elementos interactivos utilizando CSS. Se ha agregado una propiedad :focus que agrega un borde resaltado verde cuando el elemento es seleccionado mediante el teclado.
+
+```css
+:focus {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px;
+}
+```
+
+Esto asegura que los usuarios con discapacidades visuales o motoras puedan identificar qué elemento está activo mientras navegan con el teclado, mejorando la accesibilidad.
+
+## 2. Priorización de los Errores
+### 2.1. Alta Prioridad
+- **Imágenes sin texto alternativo**: Solucionado mediante la adición del atributo alt en todas las imágenes.
+- **Navegación por teclado limitada**: El menú móvil ahora es accesible por teclado, lo que soluciona este problema.
+### 2.2. Media Prioridad
+- **Contraste insuficiente entre texto y fondo**: Se mejoró el contraste y se aplicó un enfoque visible para los elementos seleccionados.
+- **Falta de enfoque visible en elementos interactivos**: Implementado un enfoque visual claro para los elementos seleccionados mediante el teclado.
+### 2.3. Baja Prioridad
+- **Formularios sin etiquetas descriptivas**: Este error no se aplica, ya que no hay formularios en el sitio actual.
+
+# Fase 6: Verificación Mediante Test Externos
+
+En esta fase, se verificó que se han alcanzado los objetivos de accesibilidad establecidos mediante el uso de herramientas externas y pruebas manuales. Esta fase se realizó en la web seleccionada en la Fase 2.
+
+## 1. Objetivo
+
+El objetivo principal fue comprobar que se cumplían los requisitos de accesibilidad utilizando herramientas automáticas y pruebas manuales para garantizar que el sitio web alcanzara el nivel AA de accesibilidad.
+
+## 2. Tareas Realizadas
+
+### 2.1. Herramientas Automáticas
+
+Se utilizaron herramientas automáticas como **TAW**, **SortSite** y otros validadores online para verificar el cumplimiento del nivel **AA** de accesibilidad.
+
+#### Ejemplo de Pruebas:
+
+- **Página Antigua**:
+
+![image](https://github.com/user-attachments/assets/087c5444-7891-459e-8f7f-7d8d4a246fe1)
+
+  
+- **Nueva Página**:  
+
+![image](https://github.com/user-attachments/assets/48d81b96-ffac-44be-b7e9-c417a57d9323)
+
+![image](https://github.com/user-attachments/assets/2841b2ff-1cc7-4847-a710-b90d262ceeeb)
+
+![image](https://github.com/user-attachments/assets/a27d7b8c-88b9-4ed1-9353-b52e377a6bea)
+
+![image](https://github.com/user-attachments/assets/b326b1fe-9ea2-483d-9b3d-985a7db15455)
+
+
+#### Resultados de las pruebas con SortSite:
+
+![image](https://github.com/user-attachments/assets/e318f893-820b-4659-9861-f3143154ee1c)
+
+### 2.2. Pruebas Manuales
+
+Se realizaron pruebas manuales para comprobar que los elementos de la página fueran accesibles mediante el teclado, sin necesidad de utilizar un ratón.
+
+![image](https://github.com/user-attachments/assets/bef5fc33-e8bc-4cc0-85e0-09b8eebbdcf0)
+
+![image](https://github.com/user-attachments/assets/f0bc5f23-9ebf-44db-89ca-7127a69c61cf)
+
+![image](https://github.com/user-attachments/assets/7c307028-7699-4d8f-bdd4-e3e18b1a1767)
+
+![image](https://github.com/user-attachments/assets/db8fbf8e-e68f-4d80-8386-05e78d378b32)
+
+# Fase 7: Verificación Multiplataforma
+
+En esta fase, se garantizó que la web fuera funcional en diferentes navegadores, dispositivos y tecnologías asistivas, asegurando una experiencia accesible y consistente para todos los usuarios.
+
+## 1. Objetivo
+
+El objetivo principal fue verificar que el sitio web se comporte correctamente y sea accesible en diversos navegadores, dispositivos y tecnologías asistivas, asegurando que la web sea completamente funcional y accesible.
+
+## 2. Tareas Realizadas
+
+### 2.1. Pruebas en Navegadores Modernos
+
+Se realizó la verificación de la visualización y funcionalidad del sitio en navegadores modernos como **Chrome**, **Firefox** y **Edge**.
+
+#### Resultados de Pruebas en Navegadores:
+
+- **Chrome**:  
+
+![image](https://github.com/user-attachments/assets/ad37e675-3a34-45de-9948-4fe15a9d4378)
+
+
+- **Firefox**:  
+
+![image](https://github.com/user-attachments/assets/6a41a4fa-9f50-4ba5-8826-80b0ef5e7133)
+
+
+- **Edge**:  
+
+![image](https://github.com/user-attachments/assets/a84552ed-a999-466a-87c4-a90cd9cd7659)
+
+
+### 2.2. Verificación en Dispositivos Móviles y Tabletas (Diseño Responsive)
+
+Se verificó que el diseño del sitio fuera responsive, es decir, que se adaptara correctamente a diferentes tamaños de pantalla en dispositivos móviles y tabletas.
+
+#### Resultados de Pruebas en Dispositivos Móviles y Tabletas:
+
+- **Chrome en Móvil**:  
+
+![image](https://github.com/user-attachments/assets/6d556721-cd49-4bad-be24-9655f782fe44)
+
+
+- **Chrome en iPad**:
+
+![image](https://github.com/user-attachments/assets/ef4ce7d0-7a21-42c0-91a7-e2438a003bdc)
+
+
+Estas pruebas garantizan que el sitio sea completamente funcional y accesible tanto en dispositivos de escritorio como móviles, proporcionando una experiencia fluida y adaptable en diversas plataformas.
+
+# Fase 8: Análisis y Estrategias para Mejorar Visibilidad en Buscadores
+
+En esta fase, se implementaron estrategias avanzadas de SEO en la aplicación MERN para abordar los tres tipos de SEO: **On-page**, **Off-page** y **Técnico**, con el fin de mejorar la visibilidad en los motores de búsqueda.
+
+## 1. Objetivo
+
+El objetivo principal fue implementar estrategias de SEO para mejorar la indexación y visibilidad de la web, aplicando técnicas de SEO On-page, SEO Técnico y evaluando los resultados mediante herramientas especializadas.
+
+## 2. Tareas Realizadas
+
+### 2.1. SEO On-page
+
+El SEO On-page se centra en optimizar el contenido y la estructura de las páginas para mejorar el rendimiento en los motores de búsqueda. En fases anteriores, ya se habían aplicado etiquetas semánticas. 
+
+- **Ejemplo en el código:**:
+
+![image](https://github.com/user-attachments/assets/1753304c-d829-4977-bf3d-30d7a1814086)
+
+- **Sobre el titulo descriptivo y la configuración de las descriciones "meta":**:
+
+![image](https://github.com/user-attachments/assets/f59bae45-1afe-453e-bccf-49ebc8645776)
+
+### 2.2. SEO Técnico
+
+- **Sitemap generado:**:
+
+![image](https://github.com/user-attachments/assets/b5ed47b2-177f-41d2-a966-afce425c47e0)
+
+![image](https://github.com/user-attachments/assets/19243389-2709-4978-861f-d55644d46c76)
+
+### 2.3 Evaluación del SEO:
+
+Usar herramientas como PageSpeed Insights y Google Search Console para analizar las mejoras implementadas.
+
+- **Página antigua:**:
+
+![image](https://github.com/user-attachments/assets/018bf058-fd8b-4046-9a71-377b4069ca1f)
+
+
+- **Página nueva:**:
+
+![image](https://github.com/user-attachments/assets/3d2c6e01-7e92-4405-9906-dc6ee6ec8c2e)
+
+## Errores Encontrados en el SEO Anteriormente y su Solución Aplicada
+
+Durante la auditoría de SEO, se identificaron varios errores en la accesibilidad y optimización del sitio. A continuación se detallan los problemas encontrados y las soluciones aplicadas para mejorar el rendimiento en los motores de búsqueda y la accesibilidad para los usuarios.
+
+### 1. Enlaces sin Texto Descriptivo
+
+- **Error**: Los enlaces no tenían texto descriptivo adecuado, lo cual afectaba la accesibilidad y comprensión del contenido para los motores de búsqueda.
+  
+- **Solución Aplicada**: Ahora todos los enlaces tienen texto descriptivo claro, lo que mejora tanto la accesibilidad como la indexación en los motores de búsqueda. Ejemplos de texto descriptivo incluyen:
+  - "Inicio"
+  - "Productos"
+  - "Nosotros"
+  - "Contacto"
+
+### 2. Elementos de Imagen sin Atributo `alt`
+
+- **Error**: Los elementos de imagen no tenían el atributo `alt`, lo que afectaba la accesibilidad para usuarios con discapacidades visuales y también impedía que los motores de búsqueda comprendieran el contenido de las imágenes.
+
+- **Solución Aplicada**: Se han agregado atributos `alt` descriptivos a todas las imágenes, lo que mejora la accesibilidad y la indexación en los motores de búsqueda. Ejemplos de atributos `alt` añadidos:
+  - "Imagen de bienvenida"
+  - "Cliente bebiendo jugo natural de frutas"
+  - "Sabor 1: Jugo de manzana natural, sin colorantes"
+  - "Sabor 2: Jugo de naranja, ideal para todas las edades"
+
+  Esto asegura que los usuarios con discapacidades visuales y los motores de búsqueda comprendan mejor el contenido de las imágenes.
+
+### 3. Falta de Meta Tags Importantes
+
+- **Error**: Algunos de los meta tags no estaban presentes o no eran completos, lo que afectaba la optimización del sitio para los motores de búsqueda.
+
+- **Solución Aplicada**: Se han añadido meta tags esenciales para mejorar la indexación y visualización en los motores de búsqueda. Los meta tags añadidos incluyen:
+  - **Meta descripción** con un texto claro y descriptivo:  
+    `"Penny Juice of America - El mejor jugo de frutas naturales para centros infantiles"`
+  - **Meta palabras clave** para mejorar la indexación:  
+    `"Penny Juice of America, jugo de frutas, centros infantiles"`
+  - **Meta charset** para asegurar la correcta visualización de caracteres especiales:  
+    `<meta charset="UTF-8" />`
+
+### 4. Falta de Enfoque en Enlaces y Botones
+
+- **Error**: Los enlaces y botones no tenían un buen manejo del enfoque visual al navegar con el teclado, lo que dificultaba la navegación para personas con discapacidades visuales o motoras.
+
+- **Solución Aplicada**: Se añadió un estilo CSS para asegurar un enfoque visual adecuado en los elementos interactivos cuando se navega con el teclado. El código CSS implementado fue:
+  
+  ```css
+  :focus { 
+    outline: 2px solid #4caf50; 
+    outline-offset: 2px; 
+  }
+  ```
+
+  ### 5. Problemas con la Estructura y Accesibilidad del Menú Móvil
+
+- **Error**: El menú no era completamente accesible en dispositivos móviles o con teclados.
+
+- **Solución Aplicada**: He implementado un menú móvil accesible con un botón de alternancia (menú hamburguesa). Los enlaces dentro del menú ahora tienen un texto descriptivo y se muestran adecuadamente en dispositivos móviles.
+
+
+
