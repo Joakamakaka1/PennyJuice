@@ -215,7 +215,7 @@ Para aplicar las pautas de accesibilidad y alcanzar el nivel AA, puedes implemen
 ### 5. Falta de Enfoque Visible en Elementos Interactivos
 - **Solución:** Implementar un enfoque visual claro (por ejemplo, un borde resaltado o cambio de color) para los botones y enlaces cuando se navega por teclado. Esto permitirá a los usuarios saber qué elemento está activo y facilita la navegación.
 
-# Implementación para Alcanzar el Nivel Deseado de Accesibilidad
+# Fase 5: Implementación para Alcanzar el Nivel Deseado de Accesibilidad
 
 Este documento detalla los cambios realizados en el sitio web para mejorar su accesibilidad, corrigiendo errores específicos y asegurando que cumpla con los estándares de accesibilidad.
 
@@ -230,7 +230,6 @@ Este documento detalla los cambios realizados en el sitio web para mejorar su ac
 - **Antes:**
   
 ![image](https://github.com/user-attachments/assets/d1b4f419-72b8-4089-8645-6b11fa0632fb)
-
 
 
 - **Despues:**
